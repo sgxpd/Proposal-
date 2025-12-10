@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For Shubham 💗</title>
+
 <style>
     body {
         font-family: 'Poppins', sans-serif;
@@ -67,29 +68,30 @@
     @keyframes blink {
         50% { border-color: transparent; }
     }
+
+    /* Music Heart Button */
+    #musicBtn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #ff3e6c;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 28px;
+        color: white;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(255, 62, 108, 0.4);
+        transition: 0.3s;
+    }
+    #musicBtn:hover {
+        background-color: #ff7797;
+        transform: scale(1.1);
+    }
 </style>
-  /* Music Heart Button */
-#musicBtn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #ff3e6c;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 28px;
-    color: white;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(255, 62, 108, 0.4);
-    transition: 0.3s;
-}
-#musicBtn:hover {
-    background-color: #ff7797;
-    transform: scale(1.1);
-}
 </head>
 
 <body>
@@ -99,13 +101,19 @@
 
     <img src="IMG-20250920-WA0046.jpg" alt="Us">
     
-    <p class="typewriter" id="text"></p>  <!-- Typewriter text here -->
+    <p class="typewriter" id="text"></p>
 
     <h1 style="font-size:28px; margin-top:40px;">Will you stay mine? 💗</h1>
 
     <button onclick="showYes()">Yes 😳💗</button>
     <p class="yes" id="yesText">I knew it. You’re already mine 😌💖</p>
 </div>
+
+<!-- Background Music -->
+<audio id="bgMusic" src="https://www.fesliyanstudios.com/play-mp3/387" loop></audio>
+
+<!-- Music Button -->
+<div id="musicBtn">💗</div>
 
 <script>
 function showYes(){
@@ -114,11 +122,14 @@ function showYes(){
 
 // Typewriter effect text
 const message = 
-`I don’t know how to say this in a fancy way...
-But you’ve become something really special to me.
-You irritate me, tease me, explain things again & again when I overthink,
+`I don’t know if I deserve someone like you…
+but somehow you still choose me every day.
+You tease me, you calm me,
+you explain things again and again when I overthink,
 and you listen to me even when it’s nonsense.
-I love the way you care, the way you talk, the way we fit into each other’s world.`;
+
+Thank you for being my person, Shubham.
+Stay mine, okay? 💗`;
 
 let i = 0;
 function typeWriter(){
@@ -129,13 +140,31 @@ function typeWriter(){
     }
 }
 typeWriter();
-</script>
-<!-- Background Music -->
-<audio id="bgMusic" src="https://www.fesliyanstudios.com/play-mp3/387" autoplay loop></audio>
-<script>
+
+// Music Button
+let musicPlaying = false;
+const music = document.getElementById("bgMusic");
+const btn = document.getElementById("musicBtn");
+
+// Play on first click anywhere (mobile rule)
 document.addEventListener("click", () => {
-    document.getElementById("bgMusic").play();
-});
+    if (!musicPlaying) {
+        music.play();
+        musicPlaying = true;
+    }
+}, { once: true });
+
+btn.onclick = () => {
+    if (music.paused) {
+        music.play();
+        btn.textContent = "💗";
+    } else {
+        music.pause();
+        btn.textContent = "💔";
+    }
+};
 </script>
+
 </body>
 </html>
+    
