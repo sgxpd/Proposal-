@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Shubham 💗</title>
+
+<style>
+    body{
+        margin:0;
+        padding:0;
+        font-family: "Poppins", sans-serif;
+        background:#ffe6f2;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+        text-align:center;
+        overflow:hidden;
+    }
+    .card{
+        background:white;
+        padding:35px;
+        border-radius:20px;
+        box-shadow:0px 5px 20px rgba(255, 0, 127, .2);
+        animation:bounce 1s infinite alternate;
+        width:300px;
+        z-index:2;
+    }
+    h1{
+        color:#ff4d88;
+        font-size:28px;
+        margin-bottom:5px;
+    }
+    h2{
+        color:#ff80a6;
+        font-size:18px;
+        margin-bottom:20px;
+    }
+    .btn{
+        padding:12px 22px;
+        border-radius:10px;
+        border:none;
+        cursor:pointer;
+        font-size:16px;
+        margin:8px;
+        transition:0.3s;
+    }
+    #yes{
+        background:#ff4d88;
+        color:white;
+    }
+    #yes:hover{
+        background:#ff0066;
+    }
+    #no{
+        background:#ffd1e1;
+        color:#ff4d88;
+        position:relative;
+    }
+    @keyframes bounce{
+        from{ transform:translateY(0);}
+        to{ transform:translateY(-8px);}
+    }
+
+    /* Floating hearts */
+    .heart{
+        position:fixed;
+        color:#ff4d88;
+        font-size:20px;
+        animation:float 6s linear infinite;
+        opacity:0.7;
+    }
+    @keyframes float {
+        0%{ transform:translateY(0) scale(1);}
+        100%{ transform:translateY(-800px) scale(1.8);}
+    }
+</style>
+</head>
+
+<body>
+
+<!-- 💗 Background Music -->
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/download/audio/2023/03/25/audio_f3986b32de.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 💌 Main Card -->
+<div class="card">
+    <h1>Hi Shubham 👋</h1>
+    <h2>Will you be mine? 💗</h2>
+
+    <button class="btn" id="yes">Yes 😳💞</button>
+    <button class="btn" id="no">No 🙈</button>
+</div>
+
+<!-- ❤️ Floating Hearts Script -->
+<script>
+    function createHeart(){
+        const heart=document.createElement("div");
+        heart.className="heart";
+        heart.innerHTML="💗";
+        heart.style.left=Math.random()*100+"vw";
+        heart.style.bottom="0px";
+        heart.style.fontSize=(Math.random()*20+15)+"px";
+        document.body.appendChild(heart);
+        setTimeout(()=>heart.remove(),6000);
+    }
+    setInterval(createHeart,300);
+</script>
+
+<!-- 💘 Buttons Actions -->
+<script>
+    const noBtn = document.getElementById("no");
+    noBtn.addEventListener("mouseover", () => {
+        noBtn.style.left = Math.random() * 60 - 30 + "px";
+        noBtn.style.top = Math.random() * 60 - 30 + "px";
+    });
+
+    document.getElementById("yes").addEventListener("click", () => {
+        window.location.href = "yes.html";
+    });
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yayyy 💞</title>
+<style>
+    body{
+        margin:0;
+        padding:0;
+        font-family:"Poppins", sans-serif;
+        background:#ffe6f2;
+        text-align:center;
+    }
+    .container{
+        margin-top:60px;
+    }
+    img{
+        width:260px;
+        height:auto;
+        border-radius:20px;
+        box-shadow:0px 5px 20px rgba(255, 0, 127, 0.3);
+    }
+    h1{
+        color:#ff0066;
+        font-size:40px;
+        margin-top:15px;
+    }
+    p{
+        font-size:22px;
+        color:#ff4d88;
+        padding:0 10%;
+    }
+</style>
+</head>
+<body>
+
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/download/audio/2023/05/12/audio_9936f88093.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+    <img src="us.jpg" alt="Us 💗">
+    <h1>Yayyy! 💞</h1>
+    <p>I’m really happy you’re with me.  
+    Let’s make more cute memories together 🌸✨</p>
+</div>
+
+</body>
+</html>
+
+us.jpg
