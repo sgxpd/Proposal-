@@ -1,206 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Shubham 💗</title>
-
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proposal Website</title>
+  <style>
     body {
-        font-family: 'Poppins', sans-serif;
-        background: #fff0f6;
-        text-align: center;
-        color: #444;
-        padding: 0;
-        margin: 0;
+      font-family: 'Comic Sans MS', sans-serif;
+      text-align: center;
+      background: #ffe6f0;
+      padding: 50px;
     }
-    .container{
-        padding: 40px 20px;
-        max-width: 700px;
-        margin: auto;
+    img {
+      width: 250px;
+      border-radius: 15px;
+      transition: transform 0.3s;
+      cursor: pointer;
     }
-    h1{
-        color: #ff3e6c;
-        font-size: 36px;
-        margin-top: 20px;
+    img:hover {
+      transform: scale(1.05) rotate(2deg);
     }
-    p{
-        font-size: 18px;
-        line-height: 1.7;
-        margin-top: 15px;
+    button {
+      margin: 10px;
+      padding: 12px 25px;
+      font-size: 20px;
+      border: none;
+      border-radius: 12px;
+      background: #ff99cc;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
     }
-    img{
-        width: 80%;
-        border-radius: 15px;
-        margin-top: 25px;
-        box-shadow: 0px 5px 10px rgba(255, 62, 108, 0.3);
+    button:hover {
+      transform: scale(1.1);
+      background: #ff66aa;
     }
-    button{
-        margin-top: 30px;
-        padding: 15px 35px;
-        font-size: 18px;
-        border: none;
-        border-radius: 50px;
-        background-color: #ff3e6c;
-        color: white;
-        cursor: pointer;
-        transition: .3s;
+    .question {
+      margin-top: 30px;
+      font-size: 22px;
+      color: #cc3366;
+      min-height: 40px;
     }
-    button:hover{
-        background-color: #ff7797;
+    .heart {
+      color: red;
+      font-size: 30px;
+      position: absolute;
+      animation: floatUp 1s ease-out forwards;
     }
-    .yes{
-        display: none;
-        margin-top: 25px;
-        font-size: 22px;
-        color: #ff005d;
-        font-weight: bold;
+    @keyframes floatUp {
+      0% { opacity: 1; transform: translateY(0) scale(1);}
+      100% { opacity: 0; transform: translateY(-100px) scale(1.5);}
     }
-
-    /* Typewriter effect */
-    .typewriter {
-        display: inline-block;
-        border-right: 2px solid #ff3e6c;
-        white-space: nowrap;
-        overflow: hidden;
-        animation: blink .7s infinite;
-    }
-    @keyframes blink {
-        50% { border-color: transparent; }
-    }
-
-    /* Music Heart Button */
-    #musicBtn {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: #ff3e6c;
-        width: 55px;
-        height: 55px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 28px;
-        color: white;
-        cursor: pointer;
-        box-shadow: 0 4px 10px rgba(255, 62, 108, 0.4);
-        transition: 0.3s;
-    }
-    #musicBtn:hover {
-        background-color: #ff7797;
-        transform: scale(1.1);
-    }
-    /* Floating Hearts */
-.heart {
-  position: fixed;
-  font-size: 25px;
-  animation: float 4s linear infinite;
-  opacity: 0.9;
-}
-
-@keyframes float {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-120vh); opacity: 0; }
-}
-</style>
+  </style>
 </head>
-
 <body>
 
-<div class="container">
-    <h1>Hey Shubham 💗</h1>
-
-    <img src="IMG-20250920-WA0046.jpg" alt="Us">
-    
-    <p class="typewriter" id="text"></p>
-
-    <h1 style="font-size:28px; margin-top:40px;">Will you stay mine? 💗</h1>
-
-    <button onclick="showYes()">Yes 😳💗</button>
-    <p class="yes" id="yesText">I knew it. You’re already mine 😌💖</p>
-</div>
-
-<!-- Background Music -->
-<audio id="bgMusic" src="https://www.fesliyanstudios.com/play-mp3/387" loop></audio>
-
-<!-- Music Button -->
-<div id="musicBtn">💗</div>
-
-<script>
-function showYes(){
-    document.getElementById("yesText").style.display = "block";
-}
-
-// Typewriter effect text
-const message = 
-`I don’t know if I deserve someone like you…
-but somehow you still choose me every day.
-You tease me, you calm me,
-you explain things again and again when I overthink,
-and you listen to me even when it’s nonsense.
-
-Thank you for being my person, Shubham.
-Stay mine, okay? 💗`;
-
-let i = 0;
-function typeWriter(){
-    if(i < message.length){
-        document.getElementById("text").textContent += message.charAt(i);
-        i++;
-        setTimeout(typeWriter, 35);
-    }
-}
-typeWriter();
-
-// Music Button
-let musicPlaying = false;
-const music = document.getElementById("bgMusic");
-const btn = document.getElementById("musicBtn");
-
-// Play on first click anywhere (mobile rule)
-document.addEventListener("click", () => {
-    if (!musicPlaying) {
-        music.play();
-        musicPlaying = true;
-    }
-}, { once: true });
-
-btn.onclick = () => {
-    if (music.paused) {
-        music.play();
-        btn.textContent = "💗";
-    } else {
-        music.pause();
-        btn.textContent = "💔";
-    }
-};
-</script>
-<script>
-function createHeart() {
-  const heart = document.createElement("div");
-  heart.className = "heart";
-  heart.textContent = "💗";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.bottom = "0px";
-  document.body.appendChild(heart);
+  <h1>Will you be mine? 💖</h1>
+  <img src="yourphoto.jpg" alt="Cute photo" id="photo">
   
-  setTimeout(() => heart.remove(), 4000);
-}
+  <button id="startButton">Yes 💖</button>
+  <audio id="yayySound" src="yayy.mp3"></audio>
 
-setInterval(createHeart, 600);
-</script>
-    <audio id="yayySound" src="yayy.mp3"></audio>
-    <script>
-  const button = document.getElementById('yesButton');
-  const sound = document.getElementById('yayySound');
+  <div class="question" id="questionBox"></div>
+  <div id="answerButtons"></div>
 
-  button.addEventListener('click', () => {
-    sound.play();
-    // Optional: Add more animations here after clicking
-  });
-    </script>
+  <script>
+    const startButton = document.getElementById('startButton');
+    const sound = document.getElementById('yayySound');
+    const questionBox = document.getElementById('questionBox');
+    const answerButtons = document.getElementById('answerButtons');
+
+    // Questions array
+    const questions = [
+      "Do you want to hang out this weekend? 🥰",
+      "Do you want to watch a movie together? 🍿",
+      "Do you want to go for a little adventure? 🌸",
+      "Yay! Can't wait to spend time with you! 💖"
+    ];
+    let currentQuestion = 0;
+
+    function typeQuestion(text, callback) {
+      questionBox.textContent = "";
+      let i = 0;
+      const interval = setInterval(() => {
+        questionBox.textContent += text[i];
+        i++;
+        if (i === text.length) {
+          clearInterval(interval);
+          if (callback) callback();
+        }
+      }, 50);
+    }
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.textContent = '💖';
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.style.top = window.innerHeight - 100 + 'px';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 1000);
+    }
+
+    function showAnswers() {
+      answerButtons.innerHTML = "";
+      const yesBtn = document.createElement('button');
+      yesBtn.textContent = "Yes 💖";
+      const noBtn = document.createElement('button');
+      noBtn.textContent = "No 😢";
+
+      yesBtn.addEventListener('click', () => {
+        sound.play();
+        createHeart();
+        nextQuestion();
+      });
+      noBtn.addEventListener('click', () => {
+        questionBox.textContent = "Aww, maybe next time 😢";
+        answerButtons.innerHTML = "";
+      });
+
+      answerButtons.appendChild(yesBtn);
+      answerButtons.appendChild(noBtn);
+    }
+
+    function nextQuestion() {
+      if(currentQuestion < questions.length) {
+        typeQuestion(questions[currentQuestion], showAnswers);
+        currentQuestion++;
+      } else {
+        questionBox.textContent = "Yay! Everything is perfect! 🥰";
+        answerButtons.innerHTML = "";
+      }
+    }
+
+    // Start the first question
+    startButton.addEventListener('click', () => {
+      sound.play();
+      createHeart();
+      startButton.style.display = 'none';
+      nextQuestion();
+    });
+
+  </script>
+
 </body>
-    
 </html>
-    
