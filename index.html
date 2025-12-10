@@ -190,6 +190,17 @@ function createHeart() {
 
 setInterval(createHeart, 600);
 </script>
+    <audio id="yayySound" src="yayy.mp3"></audio>
+    <script>
+  const button = document.getElementById('yesButton');
+  const sound = document.getElementById('yayySound');
+
+  button.addEventListener('click', () => {
+    sound.play();
+    // Optional: Add more animations here after clicking
+  });
+    </script>
 </body>
+    
 </html>
     
