@@ -1,8 +1,10 @@
-# Proposal Submission
+# 💗 Special Proposal Website
 
-This repository contains the proposal file and related documents for my Class 12 project.
+This is a personal project made with love.
 
-📌 **Subject:** (Write your subject)
-📌 **Project Topic:** (Write topic name)
-📌 **Submitted By:** (Your Name & Class)
-📌 **School:** (Your School Name)
+🌸 A cute little website designed to express feelings.
+🌙 Created with pure emotions, honesty, and soft vibes.
+💌 Dedicated to someone very special named **Shubham**.
+
+✨ This website is just a small way to say:
+**You mean a lot to me.**
